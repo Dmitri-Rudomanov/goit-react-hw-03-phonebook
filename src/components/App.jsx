@@ -29,8 +29,8 @@ class App extends Component {
   addNewContact = items => {
     const { contacts } = this.state;
     const searchContact = contacts
-      .map(contact => contact.name)
-      .includes(items.name);
+      .map(contact => contact.name.toLowerCase())
+      .includes(items.name.toLowerCase());
 
     if (searchContact) {
       alert(`${items.name} is already in conacts`);
